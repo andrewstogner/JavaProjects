@@ -40,9 +40,10 @@ public class Email {
 	{
 		System.out.print("Enter the department name: ");
 		Scanner in = new Scanner(System.in);
-		String departmentchoice = in.next();
+		String departmentchoice = in.nextLine();
 		
 		//Should add something that checks for valid input
+		departmentchoice.replaceAll("[^a-zA-Z]", "");
 		
 		return departmentchoice;
 	}
@@ -85,6 +86,7 @@ public class Email {
 	public String getAltEmail() { return this.altEmail; }
 	public String getPassword() { return this.password; }
 	
+	//Shows the name, email, and mailbox capacity for this user
 	public String showInfo() 
 	{
 		return "Display Name: " + this.firstName + " " + this.lastName +
